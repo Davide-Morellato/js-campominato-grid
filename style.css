@@ -22,6 +22,9 @@ a{
 
 body{
     background-color: rgb(127, 255, 212);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header{
@@ -38,8 +41,12 @@ header{
     gap: 10px;
 }
 
-.button{
+.btn{
     width: 50px;
+}
+
+main{
+    flex-grow: 1;
 }
 
 #center{  
@@ -50,13 +57,17 @@ header{
 .grid{
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    gap: 5px;
 }
 
 .grid > *{
-    background-color: white;
     aspect-ratio: 1/1;
-    border: 1px solid black;
+    border: 0.5px solid black;
+    text-align: center;
+    line-height: 95px;
+}
+
+.bg-sand{
+    background-color: rgb(250, 235, 199);
 }
 
 footer{
