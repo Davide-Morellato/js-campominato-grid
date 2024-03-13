@@ -10,7 +10,13 @@ createGridButton.addEventListener('click', function(){
     // CREO UNA VARIABILE PER RICHIAMARMI LA GRIGLIA
 
     const grid = document.querySelector('.grid') ;
+
+
+    // INDICO CHE AD OGNI CLICK SUCCESSIVO AL PRIMO LA GRIGLIA DEVE ESSERE VUOTA
+
+    grid.innerHTML = '';
     
+
 
     // RICHIAMO IL SELETTORE DI DIFFICOLTA' [document.getElementById()]
 
@@ -29,13 +35,18 @@ createGridButton.addEventListener('click', function(){
 
     // SE IL VALORE DEL SELETTORE E' EASY
         // ALLORA GENERA UNA GRIGLIA DI 10*10
-        // AGGIUNGI LA CLASSE grid-easy PER LA DISPOSIZIONE DELLE CELLE
+        // AGGIUNGI LA CLASSE grid-easy ALLA GRIGLIA PER LA DISPOSIZIONE DELLE CELLE (.add)
+        // RIMUOVI LE CLASSI PRECEDENTI AL CAMBIO DELLA DIFFICOLTA' (.remove)
+
     // ALTRIMENTI SE IL VALORE DEL SELETTORE E' MEDIUM
-        // ALLORA GENERA UNA GRIGLIA DI 8*8
-        // AGGIUNGI LA CLASSE grid-medium PER LA DISPOSIZIONE DELLE CELLE
+        // ALLORA GENERA UNA GRIGLIA DI 9*9
+        // AGGIUNGI LA CLASSE grid-medium ALLA GRIGLIA PER LA DISPOSIZIONE DELLE CELLE (.add)
+        // RIMUOVI LE CLASSI PRECEDENTI AL CAMBIO DELLA DIFFICOLTA' (.remove)
+
     // ALTRIMENTI IL VALORE DEL SELETTORE E' HARD
-        // ALLORA GENERA UNA GRIGLIA DI 5*5
-        // AGGIUNGI LA CLASSE grid-hard PER LA DISPOSIZIONE DELLE CELLE
+        // ALLORA GENERA UNA GRIGLIA DI 7*7
+        // AGGIUNGI LA CLASSE grid-hard ALLA GRIGLIA PER LA DISPOSIZIONE DELLE CELLE (.add)
+        // RIMUOVI LE CLASSI PRECEDENTI AL CAMBIO DELLA DIFFICOLTA' (.remove)
 
     if (selectLevelValue === 'easy'){
 
@@ -43,17 +54,23 @@ createGridButton.addEventListener('click', function(){
 
         grid.classList.add('grid-easy') ;
 
+        grid.classList.remove('grid-medium', 'grid-hard') ;
+
     } else if(selectLevelValue === 'medium'){
 
         cellRow = 9 ;
 
         grid.classList.add('grid-medium') ;
 
+        grid.classList.remove('grid-easy', 'grid-hard') ;
+
     } else {
 
         cellRow = 7 ;
 
         grid.classList.add('grid-hard') ;
+
+        grid.classList.remove('grid-easy', 'grid-medium') ;
     }
     
 
