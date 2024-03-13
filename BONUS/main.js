@@ -1,6 +1,6 @@
 // RICHIAMO IL BOTTONE PER CREARE POI LA GRIGLIA [document.querySelector()]
 
-const createGridButton = document.querySelector('.btn')
+const createGridButton = document.querySelector('.btn') ;
 
 
 // CREO L'EVENTO SUL BOTTONE PER GENERARE LA GRIGLIA [.addEventListener()]
@@ -9,13 +9,53 @@ createGridButton.addEventListener('click', function(){
 
     // CREO UNA VARIABILE PER RICHIAMARMI LA GRIGLIA
 
-    const grid = document.querySelector('.grid')
+    const grid = document.querySelector('.grid') ;
+    
+
+    // RICHIAMO IL SELETTORE DI DIFFICOLTA' [document.getElementById()]
+
+    const selectLevel = document.getElementById('difficult') ;
 
 
-    // CREO UNA VARIABILE cell PER INDICARE QUANTE CELLE VOGLIO SU UNA RIGA
+    // CREO UNA VARIABILE PER PRENDERE IL VALORE DEL SELETTORE (.value)
 
-    const cellRow = 10 ;
+    let selectLevelValue = selectLevel.value ;
 
+
+    // CREO UNA VARIABILE cellRow CON SCOPE GLOBALE PER INDICARE QUANTE CELLE VOGLIO SU UNA RIGA
+
+    let cellRow ;
+
+
+    // SE IL VALORE DEL SELETTORE E' EASY
+        // ALLORA GENERA UNA GRIGLIA DI 10*10
+        // AGGIUNGI LA CLASSE grid-easy PER LA DISPOSIZIONE DELLE CELLE
+    // ALTRIMENTI SE IL VALORE DEL SELETTORE E' MEDIUM
+        // ALLORA GENERA UNA GRIGLIA DI 8*8
+        // AGGIUNGI LA CLASSE grid-medium PER LA DISPOSIZIONE DELLE CELLE
+    // ALTRIMENTI IL VALORE DEL SELETTORE E' HARD
+        // ALLORA GENERA UNA GRIGLIA DI 5*5
+        // AGGIUNGI LA CLASSE grid-hard PER LA DISPOSIZIONE DELLE CELLE
+
+    if (selectLevelValue === 'easy'){
+
+        cellRow = 10 ;
+
+        grid.classList.add('grid-easy') ;
+
+    } else if(selectLevelValue === 'medium'){
+
+        cellRow = 9 ;
+
+        grid.classList.add('grid-medium') ;
+
+    } else {
+
+        cellRow = 7 ;
+
+        grid.classList.add('grid-hard') ;
+    }
+    
 
     // CREO UNA VARIABILE gridCells PER INDICARE QUANTE CELLE TOTALI VOGLIO PER LA GRIGLIA
 

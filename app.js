@@ -18,7 +18,7 @@ createGridButton.addEventListener('click', function(){
     const grid = document.querySelector('.grid')
 
 
-    // CREO UNA VARIABILE cell PER INDICARE QUANTE CELLE VOGLIO SU UNA RIGA
+    // CREO UNA VARIABILE cellRow PER INDICARE QUANTE CELLE VOGLIO SU UNA RIGA
 
     const cellRow = 10 ;
 
