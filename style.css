@@ -63,3 +63,7 @@ footer{
     background-color: white;
     padding: 30px;
 }
+
+.ref{
+    text-decoration: underline;
+}
